@@ -8,7 +8,7 @@ return {
       --   light = "latte",
       --   dark = "frappe",
       -- }
-      opts.transparent_background = true
+      -- opts.transparent_background = true
       opts.show_end_of_buffer = true -- shows the '~' characters after the end of buffers
       opts.term_colors = true -- set the terminal colors to the neovim colors
       opts.styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
@@ -39,12 +39,18 @@ return {
     ---@type AstroUIOpts
     opts = {
       -- change colorscheme
-      -- colorscheme = "astrodark",
-      colorscheme = "catppuccin",
+      colorscheme = "astrodark",
+      -- colorscheme = "catppuccin",
       -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
       highlights = {
         init = { -- this table overrides highlights in all themes
           -- Normal = { bg = "#000000" },
+          Visual = {
+            bg = "#34495e", -- 选中区域的背景色
+            fg = "#ecf0f1", -- 选中区域的文字颜色
+            -- bold = true,  -- 可选：文字加粗
+            -- italic = true -- 可选：文字斜体
+          },
         },
         astrodark = { -- a table of overrides/changes when applying the astrotheme theme
           -- Normal = { bg = "#000000" },
