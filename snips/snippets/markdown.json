@@ -1,0 +1,14 @@
+{
+  "log": {
+    "prefix": "log",
+    "body": [
+      "## Today:",
+      "",
+      "## Thoughts on Today",
+      "",
+      "## Future plans",
+      ""
+    ],
+    "description": "Log for everyday"
+  }
+}
