@@ -1,4 +1,5 @@
 return {
+
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -8,9 +9,9 @@ return {
       --   light = "latte",
       --   dark = "frappe",
       -- }
-      -- opts.transparent_background = true
-      opts.show_end_of_buffer = true -- shows the '~' characters after the end of buffers
-      opts.term_colors = true -- set the terminal colors to the neovim colors
+      opts.transparent_background = true
+      opts.show_end_of_buffer = false -- shows the '~' characters after the end of buffers
+      opts.term_colors = false -- set the terminal colors to the neovim colors
       opts.styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
         comments = { "italic" }, -- Change the style of comments
         conditionals = { "italic" },
@@ -28,8 +29,8 @@ return {
       }
       opts.dim_inactive = {
         enabled = false, -- dims the background color of inactive window
-        shade = "light", -- the shading mode: 'dark' or 'light'
-        percentage = 0.5, -- percentage of the shade to apply to the inactive window
+        shade = "dark", -- the shading mode: 'dark' or 'light'
+        percentage = 0.15, -- percentage of the shade to apply to the inactive window
       }
       return opts
     end,
@@ -39,8 +40,8 @@ return {
     ---@type AstroUIOpts
     opts = {
       -- change colorscheme
-      colorscheme = "astrodark",
-      -- colorscheme = "catppuccin",
+      -- colorscheme = "astrodark",
+      colorscheme = "catppuccin",
       -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
       highlights = {
         init = { -- this table overrides highlights in all themes
@@ -48,8 +49,8 @@ return {
           Visual = {
             bg = "#34495e", -- 选中区域的背景色
             fg = "#ecf0f1", -- 选中区域的文字颜色
-            -- bold = true,  -- 可选：文字加粗
-            -- italic = true -- 可选：文字斜体
+            bold = true, -- 可选：文字加粗
+            italic = true, -- 可选：文字斜体
           },
         },
         astrodark = { -- a table of overrides/changes when applying the astrotheme theme
@@ -58,9 +59,7 @@ return {
       },
       folding = {
         -- whether a buffer should have folding can be true/false for global enable/disable or fun(bufnr:integer):boolean
-        enabled = function(bufnr)
-          return require("astrocore.buffer").is_valid(bufnr)
-        end,
+        enabled = function(bufnr) return require("astrocore.buffer").is_valid(bufnr) end,
         -- a priority list of fold methods to try using, available methods are "lsp", "treesitter", and "indent"
         methods = { "lsp", "treesitter", "indent" },
       },

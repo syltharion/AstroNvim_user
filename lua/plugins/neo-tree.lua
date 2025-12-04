@@ -77,7 +77,7 @@ return {
       visible = false,
       show_hidden_count = true,
       hide_dotfiles = false,
-      hide_gitignored = false,
+      hide_gitignored = true,
       hide_by_name = {
         ".git",
         ".DS_Store",
@@ -94,8 +94,8 @@ return {
       Y = "copy_selector",
       h = "parent_or_close",
       l = "child_or_open",
-      ["<Leader>|"] = "open_vsplit",
-      ["<Leader>-"] = "open_split",
+      ["\\"] = "open_vsplit",
+      ["|"] = "open_split",
       s = "",
       S = "",
     }

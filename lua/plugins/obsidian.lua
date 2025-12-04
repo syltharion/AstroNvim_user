@@ -1,6 +1,6 @@
 return {
   "obsidian-nvim/obsidian.nvim",
-  enabled = false,
+  -- enabled = false,
   -- the obsidian vault in this default config  ~/obsidian-vault
   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand':
   -- event = { "bufreadpre " .. vim.fn.expand "~" .. "/my-vault/**.md" },
@@ -74,6 +74,7 @@ return {
       -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
       -- URL it will be ignored but you can customize this behavior here.
       follow_url_func = vim.ui.open,
+       ui = { enable = false },
     })
   end,
 }

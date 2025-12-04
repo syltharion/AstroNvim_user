@@ -12,18 +12,18 @@
 --   end
 -- })
 -- 自动格式化C++文件
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "c",
-  callback = function()
-    -- 保存时自动格式化
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = 0,
-      command = "ClangFormat",
-    })
-    -- 设置快捷键手动格式化 (例如 <leader>f)
-    vim.keymap.set("n", "<leader>lF", "<cmd>ClangFormat<CR>", { buffer = 0 })
-  end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "c",
+--   callback = function()
+--     -- 保存时自动格式化
+--     vim.api.nvim_create_autocmd("BufWritePre", {
+--       buffer = 0,
+--       command = "ClangFormat",
+--     })
+--     -- 设置快捷键手动格式化 (例如 <leader>f)
+--     vim.keymap.set("n", "<leader>lF", "<cmd>ClangFormat<CR>", { buffer = 0 })
+--   end,
+-- })
 
 -- 确保与editorconfig兼容
 vim.g.clang_format_fallback_style = "LLVM"
@@ -126,7 +126,7 @@ local function insert_today_agenda(opts)
 
   -- 插入新日程
   vim.api.nvim_buf_set_lines(0, start_delete - 1, start_delete - 1, false, agenda_output)
-  Snacks.notify.warn "今日日程已更新。"
+  Snacks.notify.info "今日日程已更新。"
 end -- 插入今日日程函数
 
 -- 用户命令
@@ -151,3 +151,4 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
     end
   end,
 })
+

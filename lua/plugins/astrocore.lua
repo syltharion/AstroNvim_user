@@ -130,7 +130,7 @@ return {
 
         -- ["<F7>"] = { "<Cmd>OverseerRun Run\\ C/C++\\ file<CR>", desc = "Compile and run" },
         ["<Leader>tl"] = false,
-        ["<Leader>gg"] = false,
+        -- ["<Leader>gg"] = false,
         ["<Leader>dU"] = { function() require("dapui").open { reset = true } end, desc = "Restore Dap-UI" },
         ["<Leader>dG"] = { function() require("utils").create_launch_json() end, desc = "Create dap launch json" },
         ["<Leader>dQ"] = {

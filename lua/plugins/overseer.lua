@@ -11,6 +11,7 @@ return {
     }, function(task_defn, util)
       -- 如果该项目是 CMake 项目，则先Build
       if require("cmake-tools").is_cmake_project() then
+        require("direnv").check_direnv()
         vim.cmd "CMakeBuild"
         -- util.add_component(task_defn, { "on_output_quickfix", open = true })
       end
@@ -19,8 +20,6 @@ return {
     opts.component_aliases = {
       -- Most tasks are initialized with the default components
       default = {
-        { "display_duration", detail_level = 2 },
-        "on_output_summarize",
         "on_output_quickfix", -- This component is only added if the task has a quickfix list
         "on_exit_set_status",
         "on_complete_notify",
@@ -33,7 +32,7 @@ return {
       },
     }
     opts.strategy = {
-      "toggleterm",
+      "system",
       -- load your default shell before starting the task
       use_shell = false,
       -- overwrite the default toggleterm "direction" parameter
